@@ -1,0 +1,182 @@
+/* Basic CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+.body-overlay {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-content {
+  overflow: hidden; 
+}
+
+.body-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    linear-gradient(-45deg, rgba(177, 59, 255, 0.5), rgba(89, 27, 90, 0.7), rgba(255, 204, 0, 0.7)),
+    url('https://webandcrafts.com/_next/image?url=https%3A%2F%2Fadmin.wac.co%2Fuploads%2FWhat_is_E_commerce_and_What_are_its_Applications_2_d2eb0d4402.jpg&w=4500&q=90');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  z-index: 0;
+}
+
+
+.body-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.background-gradient {
+  background: linear-gradient(-45deg, #090040, #7b06ca, #ffd428);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.floating-navbar {
+  max-width: 95%;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-section {
+  width: 100%;               
+  box-sizing: border-box; 
+}
+
+.gradient-text {
+  background: linear-gradient(-45deg, #090040, #B13BFF, #FFCC00);
+  font-size: clamp(2rem, 5vw, 5rem);  
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.carousel-inner img {
+  object-fit: cover;
+  height: 400px;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 1024px) and (min-height: 600px) {
+  .hero-section {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 0px;
+    margin: 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-section {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 0px;
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-section {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    margin: 0px;
+  }
+
+  .gradient-text {
+    font-size: clamp(1.8rem, 6vw, 3rem); 
+  }
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  min-height: 100%;
+}
+
+.gradient-background {
+  background: linear-gradient(-45deg, #090040, #7b06ca, #ffd428);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.grey-background {
+  background-color: #f2f2f2;
+}
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo-layout {
+  height: 50px;
+  object-fit: contain;
+}
+
